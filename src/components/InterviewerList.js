@@ -1,14 +1,11 @@
 import React from "react";
 
-import classNames from "classnames";
-
 import InterviewerListItem from "./InterviewerListItem";
 
 import "components/InterviewerList.scss";
 
 function InterviewerList(props) {
-  const { id, interviewers, setInterviewer, interviewer, value } = props;
-  console.log("interviewer", interviewer);
+  const { interviewers, setInterviewer, value } = props;
 
   const interviewerItems = interviewers.map((currentInterviewer) => {
     return (

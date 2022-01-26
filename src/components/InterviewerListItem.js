@@ -2,12 +2,10 @@ import React from "react";
 
 import "components/InterviewerListItem.scss";
 
-import { useState } from "react";
-
 import classNames from "classnames";
 
 function InterviewerListItem(props) {
-  const { id, name, avatar, selected, setInterviewer } = props;
+  const { name, avatar, selected, setInterviewer } = props;
 
   const interviewerClass = classNames({
     "interviewers__item--selected": selected,
