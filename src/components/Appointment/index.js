@@ -35,6 +35,12 @@ export default function Appointment(props) {
     return `Appointment At ${props.time}`;
   };
 
+  function handleEdit() {
+    transition(CREATE)
+    props.editInterview(props.id)
+      .then(() => transition(CREATE))
+  }
+
   function handleConfirm() {
     transition(DELETING)
     props.cancelInterview(props.id)
@@ -53,6 +59,7 @@ export default function Appointment(props) {
           student={props.interview.student}
           interviewer={props.interview.interviewer}
           onDelete={handleDelete}
+          onEdit={handleEdit}
         />
       )}
       {mode === CREATE && <Form interviewers={props.interviewers} onSave={(student, interviewer) => save(student, interviewer)} />}
