@@ -1,5 +1,3 @@
-import Empty from "components/Appointment/Empty";
-import { process_params } from "express/lib/router";
 import react, { useState } from "react";
 
 export default function useVisualMode(initial) {
@@ -10,7 +8,10 @@ export default function useVisualMode(initial) {
     if (replace) {
       setHistory([...history.slice(0, history.length - 1), newMode]);
     } else {
-      setHistory([...history, newMode]);
+      setHistory(prev => {
+        return [...prev, newMode];
+      });
+
     }
   }
   function back() {

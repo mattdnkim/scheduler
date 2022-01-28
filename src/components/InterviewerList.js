@@ -4,8 +4,10 @@ import InterviewerListItem from "./InterviewerListItem";
 
 import "components/InterviewerList.scss";
 
+import PropTypes from 'prop-types';
+
 function InterviewerList(props) {
-  const { interviewers, setInterviewer, value } = props;
+  const { interviewers, setInterviewer, interviewer } = props;
 
   const interviewerItems = interviewers.map((currentInterviewer) => {
     return (
@@ -13,7 +15,7 @@ function InterviewerList(props) {
         key={currentInterviewer.id}
         name={currentInterviewer.name}
         avatar={currentInterviewer.avatar}
-        selected={currentInterviewer.id === value}
+        selected={currentInterviewer.id === interviewer}
         setInterviewer={() => setInterviewer(currentInterviewer.id)}
       />
     );
@@ -25,5 +27,9 @@ function InterviewerList(props) {
     </section>
   );
 }
+
+InterviewerList.propTypes = {
+  interviewers: PropTypes.array.isRequired
+};
 
 export default InterviewerList;
