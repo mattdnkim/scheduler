@@ -79,7 +79,7 @@ export default function Appointment(props) {
       {mode === DELETING && <Status message={"Deleting"} />}
       {mode === ERROR_SAVE && <Error message={"Could not save the appointment"} onClose={back} />}
       {mode === ERROR_DELETE && <Error message={"Could not cancel the appointment"} onClose={back} />}
-      {mode === EDIT && <Form interview={props.interview} interviewers={props.interviewers} onSave={(student, interviewer) => save(student, interviewer)} onCancel={back} />}
+      {mode === EDIT && <Form name={props.interview.student} interview={props.interview} interviewer={props.interview.interviewer ? props.interview.interviewer.id : props.interview.interviewer} interviewers={props.interviewers} onSave={(student, interviewer) => save(student, interviewer)} onCancel={back} />}
     </article>
   );
 }
