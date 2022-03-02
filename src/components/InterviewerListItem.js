@@ -1,3 +1,5 @@
+//Component for an individual time window in a day
+
 import React from "react";
 
 import "components/InterviewerListItem.scss";

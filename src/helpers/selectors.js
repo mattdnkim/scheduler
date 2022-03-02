@@ -1,5 +1,6 @@
-import Appointment from "components/Appointment";
+//functions for fetching data from state
 
+//get the appointments from the selected day
 export function getAppointmentsForDay(state, day) {
   const filteredDay = state.days.filter((d) => d.name === day);
   let output = [];
@@ -14,6 +15,7 @@ export function getAppointmentsForDay(state, day) {
   return output;
 }
 
+//get the interview appointments from the day
 export function getInterview(state, interview) {
   let output = {};
   const appointmentKeys = Object.keys(state.appointments);
@@ -31,17 +33,16 @@ export function getInterview(state, interview) {
   }
 }
 
+//get available interviewers for a selected day
 export function getInterviewersForDay(state, day) {
   const filteredDay = state.days.find((d) => d.name === day);
-  const result = []
+  const result = [];
   if (!filteredDay) {
     return [];
   }
-  const filteredInterviewerIds = filteredDay.interviewers
+  const filteredInterviewerIds = filteredDay.interviewers;
   for (const id of filteredInterviewerIds) {
-    result.push(state.interviewers[id])
+    result.push(state.interviewers[id]);
   }
-  return result
+  return result;
 }
-
-

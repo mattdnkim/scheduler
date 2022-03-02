@@ -1,3 +1,5 @@
+//component for an individual day
+
 import classNames from "classnames";
 import React from "react";
 import "components/DayListItem.scss";

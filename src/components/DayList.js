@@ -1,3 +1,5 @@
+//component for the daylist in the sidebar
+
 import React from "react";
 import DayListItem from "./DayListItem";
 

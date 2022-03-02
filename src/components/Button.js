@@ -1,3 +1,5 @@
+//component for confirm button and cancel button
+
 import React from "react";
 
 import "components/Button.scss";
