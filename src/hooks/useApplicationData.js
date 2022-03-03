@@ -42,7 +42,7 @@ export default function useApplicationData() {
       [id]: appointment,
     };
 
-    //
+    //add spot when the appointment canceled
     const addingSpotForDay = function (day, appointments) {
       const dailyAppointments = day.appointments.length;
       const currentAppointments = day.appointments.reduce((count, id) => {
@@ -65,7 +65,7 @@ export default function useApplicationData() {
       setState({ ...state, days, appointments })
     );
   }
-
+  //cancel the interview
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -75,7 +75,7 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment,
     };
-
+  
     const deleteSpotForDay = function (day, appointments) {
       const dailyAppointments = day.appointments.length;
       const currentAppointments = day.appointments.reduce((count, id) => {
